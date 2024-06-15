@@ -1,0 +1,34 @@
+﻿<Window x:Class="WordExceel.ExcelEmail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordExceel"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="ExcelEmail" Height="450" Width="800" Background="#FF885174">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" materialDesign:HintAssist.Hint="Имя колонки" Foreground="White" VerticalAlignment="Center" FontSize="15" Name="ColumnTbx"/>
+            <Button Grid.Column="1" Content="Вставить колонку" Click="Button_Click" Background="#FF885174"/>
+        </Grid>
+        <DataGrid x:Name="ExcelDataGrid" Grid.Row="1" Background="#FF885174" Foreground="#E5FFFFFF" BorderBrush="White"  />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Сохранить" Click="Button_Click_1" Background="#FF3AB759"/>
+            <Button Grid.Column="1" Content="Отправить по почте" Click="Button_Click" Background="#FF3AB759"/>
+        </Grid>
+    </Grid>
+</Window>

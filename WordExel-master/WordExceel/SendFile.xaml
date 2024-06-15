@@ -1,0 +1,62 @@
+﻿<Window x:Class="WordExceel.SendFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordExceel"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="SendFile" Height="300" Width="500" WindowStartupLocation="CenterScreen" Background="#FF885174">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Для отправки нужно вести свою почту и пароль, после отправить кому-то)" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#E5FFFFFF" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Логин"  Foreground="White" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1"  materialDesign:HintAssist.Hint="Логин" VerticalAlignment="Center" Foreground="White" Background="{x:Null}"  BorderBrush="White" Margin="0,0,10,0" Name="LoginBx"/>
+            <ComboBox Grid.Column="2" Width="70" Margin="0,0,10,0" Foreground="White" BorderBrush="White"  materialDesign:HintAssist.Hint="Почта" Name="Combo" Background="#FF885174" >
+                <ComboBoxItem Content="Google" Tag="imap.gmail.com"/>
+                <ComboBoxItem Content="Mail" Tag="imap.mail.ru"/>
+                <ComboBoxItem Content="Yandex" Tag="imap.yandex.ru"/>
+                <ComboBoxItem Content="Rambler" Tag="imap.rambler.ru"/>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Пароль"  Foreground="White" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1"  materialDesign:HintAssist.Hint="Пароль" VerticalAlignment="Center" Foreground="White" Background="{x:Null}"  BorderBrush="White" Margin="0,0,20,0" Name="PasswordBx"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Кому"  Foreground="White" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1"  materialDesign:HintAssist.Hint="Кому" VerticalAlignment="Center" Foreground="White" Background="{x:Null}"  BorderBrush="White" Margin="0,0,20,0" Name="To"/>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Тема"  Foreground="White" FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Grid.Column="1"  materialDesign:HintAssist.Hint="Тема" VerticalAlignment="Center" Foreground="White" Background="{x:Null}"  BorderBrush="White" Margin="0,0,20,0" Name="Theme"/>
+        </Grid>
+        <Button Grid.Row="5" Margin="8" Height="23" Content="Отправить" FontSize="10" Click="Button_Click" Background="#FF3AB759"/>
+    </Grid>
+</Window>
